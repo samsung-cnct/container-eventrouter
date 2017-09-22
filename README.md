@@ -1,4 +1,4 @@
-# solas
+# solas-container
 `solas-container` is scaffolding for new container repositories hosted by Samsung CNCT. It implements our best practices, such as issue and PR templates, commit hooks, licensing guidelines, and so on.
 
 SOLAS is also an international maritime treaty to ensure ships comply with minimum safety standards in construction, equipment and operation.
