@@ -29,7 +29,7 @@ rm -rf solas-container.git
             - Only show commit summaries (no commit messages)
     - Issue / Pull Request Events
         - Pull request open or closed
-        - Issues opened or 
+        - Issues opened or closed
         - Only show titles of new issues and pull requests
     - Other Events
         - Branch or tag created or deleted
