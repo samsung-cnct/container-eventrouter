@@ -3,7 +3,7 @@ github_org             = "samsung-cnct"
 quay_org               = "samsung_cnct"
 publish_branch         = "master"
 image_tag              = "${env.RELEASE_VERSION}" != "null" ? "${env.RELEASE_VERSION}" : "latest"
-project_name           = "name of project"
+project_name           = "solas-container"
 
 podTemplate(label: "${project_name}", containers: [
     containerTemplate(name: 'jnlp', image: "quay.io/${quay_org}/custom-jnlp:0.1", args: '${computer.jnlpmac} ${computer.name}'),
@@ -29,7 +29,7 @@ podTemplate(label: "${project_name}", containers: [
         }
 
         stage('Test') {
-          kubesh "do stuff/re-write a local configuration file to reference the newly built docker image"
+          kubesh "echo The test stage is empty"
         }
 
         // only push from master.   check that we are on samsung-cnct fork
