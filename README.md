@@ -19,21 +19,8 @@ rm -rf solas-container.git
 
 - [Fork](https://help.github.com/articles/fork-a-repo/) the `container-zabra` repo (https://github.com/samsung-cnct/container-zabra) from `samsung-cnct` and begin submiitting PRs.
 
-# What to do next?
+# Integrations Used by the Samsung CNCT Tools Team
 
-- You should configure CI/CD by following the instructions for [GitHub](https://github.com/samsung-cnct/template-chart/blob/master/docs/github.md), [Jenkins](https://github.com/samsung-cnct/template-chart/blob/master/docs/jenkins.md), and [Quay](https://github.com/samsung-cnct/template-chart/blob/master/docs/quay.md).
+- Configure CI/CD by following the instructions for [GitHub](https://github.com/samsung-cnct/solas/blob/master/docs/github.md), [Jenkins](https://github.com/samsung-cnct/solas/blob/master/docs/jenkins.md), and [Quay](https://github.com/samsung-cnct/solas/blob/master/docs/quay.md).
 
-- You may want to update the teams [Slack notifications](https://samsung-cnct.slack.com/apps/search?q=github) to notify developers of PR and issue activiy. To do this you will need [Admin Privileges](https://help.github.com/articles/repository-permission-levels-for-an-organization/). To ensure that you are not the only one who can maintain these integrations, it is recommended that you grant a GitHub Team (e.g. `commontools`) permissions and not a single individual contributor.  The default notification level for the github integration can be noisy so you only want to have the following Events notify slack:
-    - Commit Events
-        - Commits pushed to the repository
-            - Only show commit summaries (no commit messages)
-    - Issue / Pull Request Events
-        - Pull request open or closed
-        - Issues opened or closed
-        - Only show titles of new issues and pull requests
-    - Other Events
-        - Branch or tag created or deleted
-        - Branch force-pushed
-  
-
-- If your project will be administered by a GitHUb team (e.g. `commontools`), you will need to contact an owner of the `samsung-cnct` organization so they can grant the `commontools` team admin privileges. Reachout in the `#cnct-dev` or `#team-tooltime` Slack channels.
+- Configure [Slack](https://github.com/samsung-cnct/solas/blob/master/docs/slack.md) notifications.
