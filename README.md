@@ -16,6 +16,7 @@ git push --mirror https://github.com/samsung-cnct/container-zabra.git
 cd ..
 rm -rf solas-container.git
 ```
+- Configure the permissions for the `container-zabra` repo. This is necessary for the integrations used in the next section and ensures your development work can take advantage of peer review from the start. From the 'Settings' section, go to the 'Collaborators & teams' tab, then add `commontools` as a team with admin privileges, and `kraken-reviewers` as a team with write privileges.
 
 - [Fork](https://help.github.com/articles/fork-a-repo/) the `container-zabra` repo (https://github.com/samsung-cnct/container-zabra) from `samsung-cnct` and begin submiitting PRs.
 
