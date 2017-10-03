@@ -5,7 +5,7 @@ def github_org         = "samsung-cnct";
 def publish_branch     = "master";
 def registry           = "quay.io";
 def registry_user      = "samsung_cnct";
-def robot_secret       = "samsung-cnct-quay-robot-dockercfg"
+def robot_secret       = "samsung-cnct-quay-robot-zabra"
 def image_name         = "zabra-container";
 def image_tag          = "${env.RELEASE_VERSION}" != "null" ? "${env.RELEASE_VERSION}" : "latest";
 
