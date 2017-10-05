@@ -45,13 +45,13 @@ podTemplate(label: "${image_name}", containers: [
 
         // only push from master.   check that we are on samsung-cnct fork
         stage('Publish') {
-          //if (git_branch.contains(publish_branch) && git_uri.contains(github_org)) {
+          if (git_branch.contains(publish_branch) && git_uri.contains(github_org)) {
             kubesh "docker login ${registry} -u ${USERNAME} -p ${PASSWORD}"
             kubesh "docker tag ${image_name}:${env.JOB_BASE_NAME}.${env.BUILD_ID} ${registry}/${registry_user}/${image_name}:${image_tag}"
             kubesh "docker push ${registry}/${registry_user}/${image_name}:${image_tag}"
-          //} else {
-          //  echo "Not pushing to docker repo:\n    BRANCH_NAME='${env.BRANCH_NAME}'\n    GIT_BRANCH='${git_branch}'\n    git_uri='${git_uri}'"
-          //}
+          } else {
+            echo "Not pushing to docker repo:\n    BRANCH_NAME='${env.BRANCH_NAME}'\n    GIT_BRANCH='${git_branch}'\n    git_uri='${git_uri}'"
+          }
         }
       }
     }
