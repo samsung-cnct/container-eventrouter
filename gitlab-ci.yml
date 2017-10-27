@@ -13,11 +13,10 @@ variables:
   IMAGE_DEVL_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME-$CI_JOB_ID
   IMAGE_PROD_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   registry: quay.io
-  repo_name: zabra-container
+  image_name: zabra-container
   quay_org: samsung_cnct
-  QUAY_ROBOT: SECRET #make note to out "zabra-robot" or whatever in gitlab secrets
-  QUAY_PASSWORD: SECRET #this is the robot password; that's a documentation issue also
-
+  QUAY_ROBOT: SECRET
+  QUAY_PASSWORD: SECRET
 
 stages:
   - build
@@ -53,8 +52,8 @@ publish-master:
   script:
   - docker pull $IMAGE_PROD_NAME
   - docker login ${registry} -u ${quay_org}+${QUAY_ROBOT} -p ${QUAY_PASSWORD}
-  - docker tag ${IMAGE_PROD_NAME} ${registry}/${quay_org}/${repo_name}:latest
-  - docker push ${registry}/${quay_org}/${repo_name}:latest
+  - docker tag ${IMAGE_PROD_NAME} ${registry}/${quay_org}/${image_name}:latest
+  - docker push ${registry}/${quay_org}/${image_name}:latest
 
 publish-version-tag:
   stage: publish
@@ -63,5 +62,5 @@ publish-version-tag:
   script:
   - docker pull $IMAGE_PROD_NAME
   - docker login ${registry} -u ${quay_org}+${QUAY_ROBOT} -p ${QUAY_PASSWORD}
-  - docker tag ${IMAGE_PROD_NAME} ${registry}/${quay_org}/${repo_name}:$CI_COMMIT_TAG
-  - docker push ${registry}/${quay_org}/${repo_name}:$CI_COMMIT_TAG
+  - docker tag ${IMAGE_PROD_NAME} ${registry}/${quay_org}/${image_name}:$CI_COMMIT_TAG
+  - docker push ${registry}/${quay_org}/${image_name}:$CI_COMMIT_TAG
