@@ -1,0 +1,11 @@
+.DS_Store
+.git
+.github
+.gitignore
+.gitlab-ci.yml
+CODEOWNERS
+Jenkinsfile
+LICENSE
+README.md
+
+# Any project-specific files or directories not necessary to run or build the application
