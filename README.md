@@ -1,4 +1,5 @@
 # container-eventrouter 
+[![pipeline status](https://git.cnct.io/common-tools/samsung-cnct_container-eventrouter/badges/master/pipeline.svg)](https://git.cnct.io/common-tools/samsung-cnct_container-eventrouter/commits/master)
 
 A container repository for Heptiolabs eventrouter.  This defines the Dockerfile and CI/CD pipeline to build, test, and deploy an eventrouter image.  The image will be named `eventrouter-container` and hosted by Samsung CNCT.
 
