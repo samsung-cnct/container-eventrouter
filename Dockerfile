@@ -16,7 +16,7 @@ FROM alpine:3.5
 
 RUN apk update --no-cache && apk add ca-certificates
 
-RUN apk --no-cache add --virtual .build-deps \
+RUN apk --no-cache add --virtual .build-deps curl \
     go git libc-dev \
   && mkdir /go \
   && GOPATH=/go go get github.com/heptiolabs/eventrouter \
